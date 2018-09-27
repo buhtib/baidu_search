@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0px; padding: 0; list-style: none;}
+			.input_box{
+				width: 500px;
+				margin: 50px auto;
+			}
+			.input_search{
+				width: 100%;
+				height: 20px;
+				font-size: 20px;
+			}
+			.input_tip{
+				border: 1px solid gainsboro;
+				background-color: beige;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="input_box">
+			<input type="text"  class="input_search"/>
+			<ul class="input_tip"></ul>
+		</div>
+		<script src="jsonp.js"></script>
+		<script src="baidu.js"></script>
+		<script>
+// 			var params = {
+// 				wd: 'haha',
+// 				cb: "getBaiduParams"
+// 			}
+// 			fn("https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su", params);	
+			baidu.init('.input_box')
+		</script>
+	</body>
+</html>
