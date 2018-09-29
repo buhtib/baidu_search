@@ -15,15 +15,20 @@ var baidu = (function () {
 
 		event(ele) {
 			var _this = this
+			this.$input_search.onfocus = function() {
+				if(this.value){
+					_this.$input_tip.innerHTML=''
+					_this.getData()
+					_this.show_tip('block')
+				}
+			}
 			//输入框值改变，获取相应的数据
 			this.$input_search.oninput = function () {
 				clearTimeout(timer)
-				if (this.value) {
 					timer=setTimeout(function(){
 					_this.getData()
 					_this.show_tip('block')
 					},400)
-				}
 			}
 
 			//点击下拉框的值，赋值到搜索框中
@@ -35,10 +40,10 @@ var baidu = (function () {
 					_this.show_tip()
 				}
 			}
-
+			
 			// 失去焦点，隐藏
 			document.onclick = function(e) {
-                if(e.target.className != 'input_box') {
+                if(e.target != _this.$input_search) {
                     _this.show_tip()
 				}
 			}
