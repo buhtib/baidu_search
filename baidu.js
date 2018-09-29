@@ -22,9 +22,9 @@ var baidu = (function() {
 			}
 			
 			//获取焦点时，获取数据
-			this.$input_search.onfocus=function(){
-				_this.show_tip()
-			}
+			// this.$input_search.onfocus=function(){
+			// 	_this.show_tip()
+			// }
 		},
 		//jsonp获取对应数据
 		getData() {
